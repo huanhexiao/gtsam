@@ -23,12 +23,12 @@ namespace gtsam {
 
     double m1 = this->noiseModel()->distance(error);
     Matrix info1(g1->information());
-    double nu1 = 1.0/sqrt(inverse(info1).determinant());
+    double nu1 = 1.0/sqrt(info1.inverse().determinant());
     double l1 = nu1 * exp(-0.5*m1);
 
     double m2 = nullHypothesisModel_->distance(error);
     Matrix info2(g2->information());
-    double nu2 = 1.0/sqrt(inverse(info2).determinant());
+    double nu2 = 1.0/sqrt(info2.inverse().determinant());
     double l2 = nu2 * exp(-0.5*m2);
 
     if (H1) { (*H1) = (Matrix(1,5) << h_.transpose() ).finished(); }
