@@ -92,6 +92,12 @@ public:
     return theta_;
   }
 
+  /** Test(Jin): Update the current linearization point */
+  template <typename ValueType>
+  void updateLinearizationPoint(Key j, const ValueType& val) {
+    theta_.update(j, val);
+  }
+
   /** Access the current ordering */
   const Ordering& getOrdering() const {
     return ordering_;
