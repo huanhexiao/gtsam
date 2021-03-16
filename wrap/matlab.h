@@ -29,7 +29,7 @@ using gtsam::Vector;
 using gtsam::Matrix;
 
 extern "C" {
-#include <mex.h>
+#include </usr/local/MATLAB/R2019b/extern/include/mex.h>
 }
 
 #include <boost/shared_ptr.hpp>
